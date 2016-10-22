@@ -6,7 +6,7 @@ var ie=document.all&&navigator.userAgent.indexOf("Opera")==-1
 var dom=document.getElementById&&navigator.userAgent.indexOf("Opera")==-1
 
 //Specify IFRAME display attributes
-var iframeprops='width=auto height=auto marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"'
+var iframeprops='width=auto marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"'
 
 //Specify random URLs to display inside iframe
 var randomcontent=new Array()
