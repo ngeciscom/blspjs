@@ -1,18 +1,24 @@
-jQuery(document).ready(function () {
-  var a = 3;
-  var b = new Date();
-  var c = b.getSeconds();
-  var d;
-  var e = c % a;
-  e += 1;
-  if (e == 1) {
-    d = artikel1;
-  }
-  if (e == 2) {
-    d = artikel2;
-  }
-  if (e == 3) {
-    d = artikel3;
-  }
-  $(&quot;#random-post&quot;).load(d)
-});
+function generate() {
+    var linkDL = document.getElementById("download"),
+        linkAL = document.getElementById("download2"),
+        btn = document.getElementById("btn"),
+        notif = document.getElementById("daplong"),
+        direklink = document.getElementById("download").href,
+        waktu = 6;
+    var teks_waktu = document.createElement("span");
+    linkDL.parentNode.replaceChild(teks_waktu, linkDL);
+    var id;
+    id = setInterval(function () {
+        waktu--;
+        if (waktu < 0) {
+            teks_waktu.parentNode.replaceChild(linkDL, teks_waktu);
+            clearInterval(id);
+            notif.style.display = "none";
+            linkDL.style.display = "inline";
+            linkAL.style.display = "inline";
+        } else {
+            teks_waktu.innerHTML = "<h3 class='text-danger'>Link will appear in " + waktu.toString() + " Second</h3>";
+            btn.style.display = "none";
+        }
+    }, 2000);
+}
