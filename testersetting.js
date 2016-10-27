@@ -1,3 +1,11 @@
+var currentURL=location.href;
+var str = currentURL;
+var res = str.replace("https://health-tips-easy.blogspot.com/p/continue-scanning-links-from-virus.html?url=", "");
+$(".Visit_Link").hide();
+function changeLink(){
+    var decodedString = Base64.decode(res);
+    window.open(decodedString,'_blank')
+}
 function generate() {
     var linkDL = document.getElementById("download"),
         linkAL = document.getElementById("download2"),
